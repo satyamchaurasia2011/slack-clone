@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { ChatBottom, ChatContainer, Header, HeaderLeft, HeaderRight, ChatMessages } from "./chat.style";
+import { ChatBottom, ChatContainer, Header, HeaderLeft, HeaderRight, ChatMessages, Loading } from "./chat.style";
 import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import { useSelector } from 'react-redux';
@@ -8,7 +8,7 @@ import ChatInput from './ChatInput/ChatInput';
 import { useCollection, useDocument } from 'react-firebase-hooks/firestore';
 import { db } from '../../firebase';
 import Message from './Messages/Message';
-
+import { CircularProgress } from '@material-ui/core';
 function Chat() {
     const roomId = useSelector(selectRoomId);
     const chatRef = useRef(null)
@@ -27,7 +27,7 @@ function Chat() {
     
     return (
         <ChatContainer>
-            {roomDetails && roomMessages && (
+            {roomDetails && roomMessages ? (
                  <>
                  <Header>
                      <HeaderLeft>
@@ -67,7 +67,12 @@ function Chat() {
                    chatRef = {chatRef}
                  />
                  </>
-            )}
+            ):
+            <Loading>
+                 <CircularProgress size="5rem"/>
+                </Loading>
+           
+            }
            
         </ChatContainer>
     )

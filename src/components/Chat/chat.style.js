@@ -44,6 +44,13 @@ export const ChatContainer = styled.div`
     flex-grow : 1;
     overflow-y : scroll;
     margin-top : 60px;
+    
+`;
+
+export const Loading = styled.div`
+    text-align : center !important;
+    position: relative;
+    top: 36%;
 `;
 
 export const ChatMessages = styled.div``;

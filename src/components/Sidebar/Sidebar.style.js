@@ -6,12 +6,15 @@ color : white;
 flex : 0.3;
 border-top : 1px solid #49274b;
 max-width : 260px;
+height: 100vh;
 margin-top : 60px;
-
  >hr {
      margin-top : 10px;
      margin-bottom : 10px;
      border : 1px solid #49274b;
+ }
+ @media (max-width: 787px) {
+    width : 260px
  }
 `;
 export const SidebarHeader = styled.div`

@@ -19,7 +19,14 @@ export const HeaderSearch = styled.div`
         border : none;
         min-width : 30vw;
         text-align : center;
+        
     }
+    @media (max-width: 427px) {
+            width: 10vw;
+        }
+        @media (max-width: 374px) {
+            display: none;
+        }
 `;
 
 export const HeaderContainer = styled.div`
@@ -31,16 +38,25 @@ justify-content : space-between;
 padding : 10px 0px;
 background-color : var(--slack-color);
 color : white;
+@media (max-width: 767px) {
+       justify-content: space-around;
+    }
 `;
 
+export const Bar = styled.div`
+    margin-right: 30px; 
+    cursor: pointer;
+    @media (min-width: 767px) {
+       display: none !important;
+    }
+`;
 export const HeaderLeft = styled.div`
     flex : 0.3;
     display : flex;
     align-items : center;
     margin-left : 20px;
-    >.MuiSvgIcon-root {
-        margin-left : auto;
-        margin-right : 30px;
+    @media (max-width: 767px) {
+        display: none;
     }
 `;
 
@@ -60,6 +76,6 @@ cursor : pointer;
  
  :hover{
      opacity : 0.8;
- }
+ } 
 `;
 

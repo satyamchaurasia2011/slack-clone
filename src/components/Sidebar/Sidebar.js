@@ -16,6 +16,7 @@ import AddIcon from '@material-ui/icons/Add';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { auth, db } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+
 function Sidebar() {
     const [channels] = useCollection(db.collection("rooms"));
     const [user] = useAuthState(auth)
@@ -44,9 +45,11 @@ function Sidebar() {
             <SidebarOptions Icon={ExpandMoreIcon} title="Channels" />
             <hr/>
             <SidebarOptions Icon={AddIcon} addChannelOption title="Add Channel" />
-
-            {channels?.docs.map((doc) => {
+            {/* {console.log(channels?.docs[0].id)} */}
+           
+            {channels?.docs.map((doc,index) => {
                     return <SidebarOptions 
+                        index = {index}
                         key={doc.id}
                         id={doc.id}
                         title={doc.data().name}

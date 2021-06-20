@@ -39,7 +39,10 @@ function App() {
           <>
           <Header />
           <AppBody>
-            <Sidebar />
+            <SideDrawer>
+              <Sidebar />
+            </SideDrawer>
+            
             <Switch>
               <Route exact path="/">
                 <Chat />
@@ -81,4 +84,12 @@ const AppLoadingContents = styled.div`
       padding:20px;
       margin-bottom:40px;
     }
+`;
+
+const SideDrawer = styled.div`
+width : 260px;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
