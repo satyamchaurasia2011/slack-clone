@@ -5,8 +5,9 @@ background-color : var(--slack-color);
 color : white;
 flex : 0.3;
 border-top : 1px solid #49274b;
-max-width : 260px;
-height: 100vh;
+width : 260px;
+position : fixed;
+height: 100%;
 margin-top : 60px;
  >hr {
      margin-top : 10px;
@@ -52,4 +53,16 @@ export const SidebarInfo = styled.div`
          margin-right : 2px;
          color : green;
      }
+`;
+
+export const SidebarChannels = styled.div`
+     position:absolute;
+     background-color : var(--slack-color);
+    color : white;
+    ::-webkit-scrollbar {
+        
+    }
+    width : 260px;
+     height: 22%;
+     overflow : auto;
 `;

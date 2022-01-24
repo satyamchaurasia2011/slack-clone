@@ -9,6 +9,9 @@ export const Header = styled.div`
     justify-content : space-between;
     padding : 20px;
     border-bottom : 1px solid lightgray;
+    position : sticky;
+    top : 0;
+    background-color : white;
 `;
 
 export const HeaderLeft = styled.div`
@@ -53,6 +56,8 @@ export const Loading = styled.div`
     top: 36%;
 `;
 
-export const ChatMessages = styled.div``;
+export const ChatMessages = styled.div`
+
+`;
 
 
